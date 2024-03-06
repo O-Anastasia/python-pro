@@ -16,3 +16,4 @@ class Product:
 
 x = Product('pizza', 3)
 print(x)
+print('hello')
