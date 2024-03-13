@@ -36,6 +36,7 @@ class Dish:
         if price <= 0:
             logger.error('Price is not positive')
             raise IncorrectPrice('Price must be above zero') 
+        
         self.name = name
         self.price = price
         logger.info(f'New dish {self.name} was created')

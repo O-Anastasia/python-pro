@@ -1,4 +1,5 @@
 from products import Product
+from cartiterator import CartIterator
 
 
 class Cart:
@@ -34,6 +35,9 @@ class Cart:
                 del self.__products[index]
                 del self.__quantity[index] 
 
+    def __iter__(self):
+        return CartIterator(self.__products, self.__quantity)
+
     def __iadd__(self,other):
         if not isinstance(other, Cart):
             return NotImplemented
@@ -53,5 +57,7 @@ class Cart:
         return '\n'.join(map(lambda item: f'{item[0]} x {item[1]} = {item[0].price * item[1]} UAH',
                              zip(self.__products, self.__quantity))) +\
                f'\nTotal: {self.total()} UAH'
+
+
 
 
