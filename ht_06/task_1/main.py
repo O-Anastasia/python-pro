@@ -1,6 +1,5 @@
 #Task1
-# Для попереднього проєкту (Замовлення продуктів в магазині) 
-# реалізувати можливість поєднання двох кошиків в один за допомогою оператора "+=".
+# Попередній проєкт (Замовлення продуктів в магазині) доповнити можливістю підтримки ітераційного протоколу.
 from user_exception import IncorrectPrice
 from products import Product
 from cart import Cart
@@ -31,8 +30,7 @@ if __name__ == '__main__':
         cart1 += cart2
         print(cart1)
         
-        for element in cart:
-            product, quantity = element
+        for product, quantity in cart:
             print(product)
 
     except IncorrectPrice as ie:
