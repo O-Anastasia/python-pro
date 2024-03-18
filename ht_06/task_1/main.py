@@ -31,7 +31,7 @@ if __name__ == '__main__':
         print(cart1)
         
         for product, quantity in cart:
-            print(product)
+            print(product, quantity)
 
     except IncorrectPrice as ie:
         print(f'Incorrect price: {ie}')
