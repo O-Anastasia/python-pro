@@ -13,9 +13,18 @@ def is_prime(number):
 
 
 n = int(input('Input number: '))
-my_list = list(range(n + 1))
 
-tmp = [item for item in my_list if is_prime(item)] 
+tmp = (item for item in range(n + 1) if is_prime(item)) 
+print(list(tmp))
 
-print(tmp)
 
+def gen_prime_numbers(n):
+    for n in range(2, n + 1):
+        for i in range(2, n):
+            if n % i == 0:
+                break
+        else:
+            yield n
+
+
+print(*gen_prime_numbers(100))

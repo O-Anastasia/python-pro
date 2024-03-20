@@ -2,10 +2,10 @@
 # Список повинен бути заповнений кубами чисел від 2 до вказаної вами величини.
 
 n = int(input('Input number: '))
-my_list = list(range(2, n + 1))
 
-tmp = [x ** 3 for x in my_list]
-print(tmp)
+
+tmp = (x ** 3 for x in range(2, n + 1))
+print(list(tmp))
 
 
 
