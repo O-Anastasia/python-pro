@@ -40,6 +40,14 @@ class E_Wallet(PaymentWay):
 
     def make_payment(self):
         print(f'Varifing security code: {self.card_number}')
+        
 
-class PaymentProcessor:
-    ...
+def payprocessor(paymentway : PaymentWay):
+    return paymentway.make_payment()
+
+paymentways = [CreditPayment('23456'), DebitPayment('76543'), E_Wallet('4916989650541800')]
+
+for paymentway in paymentways:
+    print(payprocessor(paymentway))
+
+
